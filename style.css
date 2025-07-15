@@ -1,174 +1,132 @@
-/* Reset e base */
+/* Reset básico */
 * {
   box-sizing: border-box;
 }
+
 body {
+  background-color: #111;
+  color: #eee;
+  font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #121212;
-  color: #eee;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-}
-a {
-  color: #eee;
-  text-decoration: none;
-}
-a:hover {
-  color: #00f5ff;
+  padding: 20px;
 }
 
-/* Container geral */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 15px;
+h1, h2, h3 {
+  margin: 0 0 10px 0;
+  color: #fff;
 }
 
-header {
-  text-align: center;
-  padding: 30px 10px 15px;
-  border-bottom: 2px solid #00f5ff;
-}
-header h1 {
-  font-weight: 700;
-  font-size: 2.8rem;
-  margin-bottom: 5px;
-}
-header p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #ccc;
+h1 {
+  font-weight: bold;
+  font-size: 2.2em;
 }
 
-/* Menu de navegação */
-nav {
-  margin: 20px 0;
-  text-align: center;
-}
-nav button {
-  background: transparent;
-  border: none;
-  color: #eee;
-  font-weight: 600;
-  margin: 0 10px;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-nav button:hover,
-nav button.active {
-  background-color: #00f5ff;
-  color: #121212;
+h2 {
+  border-bottom: 2px solid #0ff;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
 }
 
-/* Seções */
-section {
-  background: #1a1a1a;
-  border-radius: 8px;
-  padding: 20px 25px;
-  margin-bottom: 25px;
-  border: 1px solid #333;
-}
-section h2 {
-  border-bottom: 2px solid #00f5ff;
-  padding-bottom: 8px;
-  margin-bottom: 15px;
+p, li {
+  line-height: 1.5;
+  color: #ddd;
 }
 
-/* Listas */
 ul {
   padding-left: 20px;
 }
 
-/* Serviços Visuais (grid) */
-.visual-services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-  gap: 20px;
-}
-.service-card {
-  background: #222;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  border: 1px solid #333;
-}
-.service-card img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 12px;
-  filter: invert(90%) sepia(10%) saturate(500%) hue-rotate(170deg);
-}
-.service-card h3 {
-  margin: 8px 0;
-  font-size: 1.1rem;
-  color: #eee;
-}
-.service-card p {
-  font-size: 0.9rem;
-  color: #ccc;
+/* Navegação */
+nav {
+  margin: 20px 0 30px 0;
+  border-bottom: 2px solid #0ff;
+  padding-bottom: 8px;
 }
 
-/* Contato */
-footer {
-  background: #111;
-  text-align: center;
-  padding: 25px 10px;
-  font-size: 0.9rem;
-  color: #aaa;
-  border-top: 2px solid #00f5ff;
-}
-.social-icons {
-  margin: 15px 0;
-}
-.social-icons a {
-  display: inline-block;
-  margin: 0 10px;
-  filter: invert(100%);
-  width: 30px;
-  height: 30px;
-  transition: filter 0.3s;
-}
-.social-icons a:hover {
-  filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(170deg);
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-/* Botões para navegação das seções */
-.hidden {
+nav li {
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+nav li.active,
+nav li:hover {
+  background-color: #0ff;
+  color: #111;
+}
+
+/* Seções */
+section {
   display: none;
-}
-
-/* Cartão de visita */
-.business-card {
-  background: #222;
+  background-color: #222;
   border-radius: 8px;
   padding: 20px;
-  max-width: 320px;
-  margin: 0 auto;
-  border: 1px solid #00f5ff;
+  margin-bottom: 30px;
+  transition: opacity 0.3s ease;
 }
-.business-card h3 {
-  margin: 0 0 5px;
-  font-weight: 700;
-  color: #00f5ff;
+
+section.active {
+  display: block;
+  opacity: 1;
 }
-.business-card p {
-  margin: 6px 0;
-  font-size: 0.95rem;
+
+/* Serviços Comunicação Visual - cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 20px;
 }
-.business-card p strong {
+
+.card {
+  background: #333;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: default;
   color: #eee;
+  box-shadow: 0 0 6px rgba(0,255,255,0.15);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
 }
-.contact-line {
-  display: flex;
-  align-items: center;
-  margin-top: 8px;
-  gap: 8px;
+
+.card:hover {
+  background-color: #0aa;
+  color: #111;
 }
-.contact-line img {
-  width: 18px;
-  height: 18px;
-  filter: invert(90%) sepia(10%) saturate(500%) hue-rotate(170deg);
+
+.card h3 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 14px;
+  color: #ddd;
+  margin: 0;
+}
+
+/* Links Contato */
+.contato-links a {
+  color: #0ff;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.contato-links a:hover {
+  color: #08c;
+  text-decoration: underline;
 }
