@@ -1,266 +1,241 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cyber Team</title>
-  <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cyber Team</title>
+<style>
+  /* Reset básico */
+  * {
+    box-sizing: border-box;
+  }
 
-    body {
-      background-color: #111;
-      color: #eee;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
+  body {
+    background-color: #111;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
 
-    h1, h2, h3 {
-      margin: 0 0 10px 0;
-      color: #fff;
-    }
+  h1, h2, h3 {
+    margin: 0 0 10px 0;
+    color: #fff;
+  }
 
-    h1 {
-      font-weight: bold;
-      font-size: 2.2em;
-    }
+  h1 {
+    font-weight: bold;
+    font-size: 2.2em;
+    text-align: center;
+  }
 
-    h2 {
-      border-bottom: 2px solid #0ff;
-      padding-bottom: 6px;
-      margin-bottom: 20px;
-    }
+  h2 {
+    border-bottom: 2px solid #ddd; /* linha branca clara */
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+  }
 
-    p, li {
-      line-height: 1.5;
-      color: #ddd;
-    }
+  p, li {
+    line-height: 1.5;
+    color: #ddd;
+  }
 
-    ul {
-      padding-left: 20px;
-    }
+  ul {
+    padding-left: 20px;
+  }
 
-    /* Navegação */
-    nav {
-      margin: 20px 0 30px 0;
-      border-bottom: 2px solid #0ff;
-      padding-bottom: 8px;
-    }
+  /* Navegação simples, sem destaque azul */
+  nav {
+    margin: 20px 0 30px 0;
+    text-align: center;
+  }
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
 
-    nav li {
-      cursor: pointer;
-      font-weight: bold;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-      user-select: none;
-    }
+  nav li {
+    cursor: default;
+    font-weight: bold;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    user-select: none;
+  }
 
-    nav li.active,
-    nav li:hover {
-      background-color: #0ff;
-      color: #111;
-    }
+  /* Boxes das seções */
+  section {
+    background-color: #222;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 6px rgba(255,255,255,0.05);
+  }
 
-    /* Seções */
-    section {
-      display: none;
-      background-color: #222;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 30px;
-      transition: opacity 0.3s ease;
-    }
+  /* Cards Serviços Comunicação Visual */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 20px;
+  }
 
-    section.active {
-      display: block;
-      opacity: 1;
-    }
+  .card {
+    background: #333;
+    border-radius: 8px;
+    padding: 20px;
+    color: #eee;
+    box-shadow: 0 0 6px rgba(255,255,255,0.1);
+    text-align: center;
+  }
 
-    /* Serviços Comunicação Visual - cards */
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-      gap: 20px;
-    }
+  .card h3 {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
 
-    .card {
-      background: #333;
-      border-radius: 8px;
-      padding: 20px;
-      cursor: default;
-      color: #eee;
-      box-shadow: 0 0 6px rgba(0,255,255,0.15);
-      transition: background-color 0.3s ease, color 0.3s ease;
-      text-align: center;
-    }
+  .card p {
+    font-size: 14px;
+    color: #ddd;
+    margin: 0;
+  }
 
-    .card:hover {
-      background-color: #0aa;
-      color: #111;
-    }
+  /* Contato ícones simples */
+  .contato {
+    text-align: center;
+    margin-top: 20px;
+  }
 
-    .card h3 {
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
+  .contato a {
+    color: #eee;
+    margin: 0 15px;
+    font-size: 30px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
 
-    .card p {
-      font-size: 14px;
-      color: #ddd;
-      margin: 0;
-    }
+  .contato a:hover {
+    color: #bbb;
+  }
 
-    /* Links Contato */
-    .contato-links a {
-      color: #0ff;
-      font-weight: bold;
-      text-decoration: none;
-      margin-right: 20px;
-      transition: color 0.3s ease;
-    }
+  /* Ícones simples (usando emojis para facilitar) */
+  .icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
 
-    .contato-links a:hover {
-      color: #08c;
-      text-decoration: underline;
-    }
-
-  </style>
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Cyber Team</h1>
-    <p>Segurança digital com confiança local.</p>
-  </header>
+<h1>Cyber Team</h1>
+<p style="text-align:center; margin-bottom: 30px;">Tornando a cibersegurança acessível no Vale do Aço</p>
 
-  <nav>
-    <ul id="menu">
-      <li class="active" data-target="quem-somos">Quem Somos</li>
-      <li data-target="objetivo">Objetivo</li>
-      <li data-target="oferecemos">O que Oferecemos</li>
-      <li data-target="diferencial">Diferencial</li>
-      <li data-target="impacto-social">Impacto Social</li>
-      <li data-target="missao">Missão</li>
-      <li data-target="comunicacao-visual">Comunicação Visual</li>
-      <li data-target="contato">Contato</li>
-    </ul>
-  </nav>
+<nav>
+  <ul>
+    <li>Quem Somos</li>
+    <li>Objetivo</li>
+    <li>O que Oferecemos</li>
+    <li>Diferencial</li>
+    <li>Impacto Social</li>
+    <li>Missão</li>
+    <li>Comunicação Visual</li>
+    <li>Contato</li>
+  </ul>
+</nav>
 
-  <main>
-    <section id="quem-somos" class="active">
-      <h2>Quem Somos</h2>
-      <p>A Cyber Team é uma startup com sede no Vale do Aço que surge com o propósito de tornar a cibersegurança acessível e eficiente para escolas e pequenas empresas da região. Com o avanço da digitalização e a crescente vulnerabilidade a ataques virtuais, muitas instituições locais se encontram despreparadas para lidar com riscos como roubo de dados, invasões de sistemas, fake news e exposição de informações sensíveis.</p>
-    </section>
+<section id="quem-somos">
+  <h2>Quem Somos</h2>
+  <p>A Cyber Team é uma startup com sede no Vale do Aço que surge com o propósito de tornar a cibersegurança acessível e eficiente para escolas e pequenas empresas da região. Com o avanço da digitalização e a crescente vulnerabilidade a ataques virtuais, muitas instituições locais se encontram despreparadas para lidar com riscos como roubo de dados, invasões de sistemas, fake news e exposição de informações sensíveis.</p>
+</section>
 
-    <section id="objetivo">
-      <h2>Nosso Objetivo</h2>
-      <p>Proteger dados e educar digitalmente comunidades que enfrentam limitações tecnológicas, falta de suporte técnico, baixo investimento em segurança digital e carência de formação na área. Focamos especialmente em escolas e pequenos empreendedores, oferecendo soluções personalizadas, acessíveis e educativas.</p>
-    </section>
+<section id="objetivo">
+  <h2>Nosso Objetivo</h2>
+  <p>Proteger dados e educar digitalmente comunidades que enfrentam limitações tecnológicas, falta de suporte técnico, baixo investimento em segurança digital e carência de formação na área. Focamos especialmente em escolas e pequenos empreendedores, oferecendo soluções personalizadas, acessíveis e educativas.</p>
+</section>
 
-    <section id="oferecemos">
-      <h2>O que Oferecemos</h2>
-      <ul>
-        <li>Serviços técnicos (presenciais e remotos) para manutenção e proteção contra vírus, malwares e invasões.</li>
-        <li>Ferramentas de segurança como antivírus, firewalls e kits de conscientização.</li>
-        <li>Cursos e workshops sobre boas práticas de segurança digital.</li>
-      </ul>
-    </section>
+<section id="o-que-oferecemos">
+  <h2>O que Oferecemos</h2>
+  <ul>
+    <li>Serviços técnicos (presenciais e remotos) para manutenção e proteção contra vírus, malwares e invasões.</li>
+    <li>Ferramentas de segurança como antivírus, firewalls e kits de conscientização.</li>
+    <li>Cursos e workshops sobre boas práticas de segurança digital.</li>
+  </ul>
+</section>
 
-    <section id="diferencial">
-      <h2>Nosso Diferencial</h2>
-      <p>Atuação local, personalizada, com foco na educação digital e responsabilidade social, para tornar a segurança simples e acessível.</p>
-    </section>
+<section id="diferencial">
+  <h2>Nosso Diferencial</h2>
+  <p>Atuação local, personalizada, com foco na educação digital e responsabilidade social, para tornar a segurança simples e acessível.</p>
+</section>
 
-    <section id="impacto-social">
-      <h2>Impacto Social</h2>
-      <p>Protegemos dados, reduzimos prejuízos e fortalecemos a confiança no ambiente online do Vale do Aço. Combatemos ativamente fake news e desinformação para um ambiente digital mais seguro e verdadeiro.</p>
-    </section>
+<section id="impacto-social">
+  <h2>Impacto Social</h2>
+  <p>Protegemos dados, reduzimos prejuízos e fortalecemos a confiança no ambiente online do Vale do Aço. Combatemos ativamente fake news e desinformação para um ambiente digital mais seguro e verdadeiro.</p>
+</section>
 
-    <section id="missao">
-      <h2>Missão</h2>
-      <p>Proteger, educar e transformar a realidade digital da região.</p>
-    </section>
+<section id="missao">
+  <h2>Missão</h2>
+  <p>Proteger, educar e transformar a realidade digital da região.</p>
+</section>
 
-    <section id="comunicacao-visual">
-      <h2>Serviços de Comunicação Visual</h2>
-      <div class="cards-container">
-        <div class="card">
-          <h3>Logomarca</h3>
-          <p>Criação de logomarcas personalizadas que representam sua identidade.</p>
-        </div>
-        <div class="card">
-          <h3>Slogan</h3>
-          <p>Desenvolvimento de slogans marcantes que reforçam sua mensagem.</p>
-        </div>
-        <div class="card">
-          <h3>Embalagens</h3>
-          <p>Design criativo que fideliza.</p>
-        </div>
-        <div class="card">
-          <h3>Panfletos</h3>
-          <p>Material gráfico eficiente.</p>
-        </div>
-        <div class="card">
-          <h3>Cardápio</h3>
-          <p>Design atrativo para menus.</p>
-        </div>
-        <div class="card">
-          <h3>Outdoor</h3>
-          <p>Campanhas visuais de alto impacto.</p>
-        </div>
-        <div class="card">
-          <h3>Cartão de Visita</h3>
-          <p>Cartões modernos e profissionais.</p>
-        </div>
-        <div class="card">
-          <h3>Rede Social (Privada)</h3>
-          <p>Comunidade segura e exclusiva.</p>
-        </div>
-      </div>
-    </section>
+<section id="comunicacao-visual">
+  <h2>Serviços de Comunicação Visual</h2>
+  <div class="cards-container">
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>Logomarca</h3>
+      <p>Criação de logomarcas personalizadas.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💬</div>
+      <h3>Slogan</h3>
+      <p>Desenvolvimento de slogans marcantes.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📦</div>
+      <h3>Embalagens</h3>
+      <p>Design criativo que fideliza.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📄</div>
+      <h3>Panfletos</h3>
+      <p>Material gráfico eficiente.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📋</div>
+      <h3>Cardápio</h3>
+      <p>Design atrativo para menus.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📢</div>
+      <h3>Outdoor</h3>
+      <p>Campanhas visuais de alto impacto.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💳</div>
+      <h3>Cartão de Visita</h3>
+      <p>Cartões modernos e profissionais.</p>
+    </div>
+    <div class="card">
+      <div class="icon">👍</div>
+      <h3>Rede Social (Privada)</h3>
+      <p>Comunidade segura e exclusiva.</p>
+    </div>
+  </div>
+</section>
 
-    <section id="contato">
-      <h2>Contato</h2>
-      <p>Entre em contato conosco pelas redes sociais:</p>
-      <div class="contato-links">
-        <a href="https://discord.com/users/luckheartless" target="_blank" rel="noopener noreferrer">Discord</a>
-        <a href="https://github.com/Lucksevenreal" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-    </section>
-  </main>
-
-  <script>
-    // Script para trocar as seções ao clicar no menu
-    const menuItems = document.querySelectorAll('#menu li');
-    const sections = document.querySelectorAll('main section');
-
-    menuItems.forEach(item => {
-      item.addEventListener('click', () => {
-        // Remove classe 'active' de todos menu e seções
-        menuItems.forEach(i => i.classList.remove('active'));
-        sections.forEach(sec => sec.classList.remove('active'));
-
-        // Adiciona a classe no menu e na seção clicada
-        item.classList.add('active');
-        const target = item.getAttribute('data-target');
-        document.getElementById(target).classList.add('active');
-      });
-    });
-  </script>
+<section id="contato">
+  <h2>Contato</h2>
+  <div class="contato">
+    <a href="https://discord.com/users/luckheartless" target="_blank" title="Discord" aria-label="Discord">💬</a>
+    <a href="https://github.com/Lucksevenreal" target="_blank" title="GitHub" aria-label="GitHub">🐱</a>
+  </div>
+</section>
 
 </body>
 </html>
