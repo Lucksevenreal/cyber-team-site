@@ -7,9 +7,9 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #121212;
-  color: #eee;
   line-height: 1.6;
+  background-color: #121212;
+  color: #e0e0e0;
   padding: 20px;
   max-width: 900px;
   margin: auto;
@@ -18,136 +18,80 @@ body {
 header {
   text-align: center;
   margin-bottom: 40px;
-  background: #1a1a1a;
-  padding: 30px 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
 }
 
 header h1 {
   font-size: 3rem;
   color: #ffffff;
   margin-bottom: 10px;
-  letter-spacing: 2px;
 }
 
 header p {
   font-size: 1.3rem;
-  color: #ccc;
-  font-style: italic;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 50px;
-  background: #222;
-  padding: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-nav a {
-  color: #eee;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-
-nav a:hover,
-nav a:focus {
-  color: #ffffff;
-  outline: none;
-}
-
-section {
-  background: rgba(30, 30, 30, 0.85);
-  padding: 25px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.07);
-  margin-bottom: 35px;
-  transition: background 0.3s ease;
-}
-
-section:hover {
-  background: rgba(50, 50, 50, 0.95);
+  color: #bbbbbb;
 }
 
 h2 {
   color: #ffffff;
-  margin-bottom: 20px;
-  font-size: 2rem;
+  margin-bottom: 15px;
   border-bottom: 2px solid #ffffff;
-  padding-bottom: 8px;
-  letter-spacing: 1.2px;
+  padding-bottom: 6px;
 }
 
-ul {
+section {
+  margin-bottom: 40px;
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+section ul {
   list-style-type: disc;
-  margin-left: 25px;
+  margin-left: 20px;
   color: #ddd;
-  font-size: 1.1rem;
+}
+
+section img {
+  display: block;
+  max-width: 100%;
+  margin: 15px auto 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
 footer {
   text-align: center;
-  margin-top: 60px;
-  font-size: 0.95rem;
-  color: #777;
-  padding: 15px 0;
-  border-top: 1px solid #333;
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #888;
 }
 
-/* Contatos - ícones */
-.contact-icons {
+.contatos {
+  margin-bottom: 15px;
+}
+
+.contatos a {
+  margin: 0 15px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.contatos a:hover {
+  color: #64ffda;
+}
+
+i.fab {
+  vertical-align: middle;
+}
+
+/* Links do menu (se quiser depois adicionar um menu fixo) */
+/* .menu {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-top: 15px;
-}
+  gap: 20px;
+  margin-bottom: 30px;
+} */
 
-.contact-icons a {
-  color: #eee;
-  font-size: 2.5rem;
-  transition: color 0.3s ease;
-}
-
-.contact-icons a:hover,
-.contact-icons a:focus {
-  color: #ffffff;
-  outline: none;
-}
-
-/* Imagens de fundo leves para seções - removidas para clareza */
-
-/* Responsividade */
-@media(max-width: 600px) {
-  body {
-    padding: 10px;
-    max-width: 100%;
-  }
-
-  header h1 {
-    font-size: 2.2rem;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav a {
-    font-size: 1rem;
-  }
-
-  .contact-icons {
-    gap: 25px;
-  }
-
-  .contact-icons a {
-    font-size: 2rem;
-  }
-}
+/* Botões, links e interatividade podem ser adicionados futuramente */
