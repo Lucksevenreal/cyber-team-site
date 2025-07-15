@@ -1,59 +1,120 @@
-/* Reset básico */
+/* Reset e base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  background-color: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f9fc;
   color: #333;
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
+  line-height: 1.6;
 }
 
-header {
+/* Navbar */
+.navbar {
+  background: #0a9396;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  background: #e0fbfc;
+  padding: 60px 20px;
   text-align: center;
-  margin-bottom: 40px;
 }
-
-header h1 {
+.hero h1 {
   font-size: 2.5rem;
   color: #005f73;
-  margin-bottom: 10px;
 }
-
-header p {
+.hero p {
   font-size: 1.2rem;
   color: #0a9396;
 }
 
-h2 {
-  color: #0a9396;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #005f73;
-  padding-bottom: 5px;
-}
-
-section {
-  margin-bottom: 30px;
-  background: #e0fbfc;
-  padding: 20px;
-  border-radius: 8px;
+/* Seções */
+.section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #ffffff;
+  margin-top: 20px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,95,115,0.1);
 }
-
-ul {
-  list-style-type: disc;
-  margin-left: 20px;
+.section h2 {
+  color: #0a9396;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #94d2bd;
+  padding-bottom: 5px;
+}
+.section ul {
+  list-style: none;
+  padding-left: 0;
+}
+.section li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.section i {
+  color: #005f73;
+  margin-right: 10px;
 }
 
+/* Contato */
+.contato {
+  text-align: center;
+}
+.contato .social a {
+  margin: 10px;
+  font-size: 1.5rem;
+  color: #0a9396;
+  transition: 0.3s;
+}
+.contato .social a:hover {
+  color: #005f73;
+}
+
+/* Rodapé */
 footer {
   text-align: center;
-  margin-top: 50px;
-  font-size: 0.9rem;
+  padding: 20px;
+  background: #f0f0f0;
   color: #555;
+  margin-top: 40px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
