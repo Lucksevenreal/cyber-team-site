@@ -8,7 +8,7 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #121212;
-  color: #e0e0e0;
+  color: #eee;
   line-height: 1.6;
   padding: 20px;
   max-width: 900px;
@@ -18,22 +18,22 @@ body {
 header {
   text-align: center;
   margin-bottom: 40px;
-  background: #1f1f1f;
+  background: #1a1a1a;
   padding: 30px 20px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 150, 136, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
 }
 
 header h1 {
   font-size: 3rem;
-  color: #00bfa5;
+  color: #ffffff;
   margin-bottom: 10px;
   letter-spacing: 2px;
 }
 
 header p {
   font-size: 1.3rem;
-  color: #80cbc4;
+  color: #ccc;
   font-style: italic;
 }
 
@@ -45,11 +45,11 @@ nav {
   background: #222;
   padding: 10px 0;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 191, 165, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 nav a {
-  color: #80cbc4;
+  color: #eee;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -59,28 +59,28 @@ nav a {
 
 nav a:hover,
 nav a:focus {
-  color: #00bfa5;
+  color: #ffffff;
   outline: none;
 }
 
 section {
-  background: #1f1f1f;
+  background: rgba(30, 30, 30, 0.85);
   padding: 25px 30px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 191, 165, 0.4);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.07);
   margin-bottom: 35px;
   transition: background 0.3s ease;
 }
 
 section:hover {
-  background: #2a2a2a;
+  background: rgba(50, 50, 50, 0.95);
 }
 
 h2 {
-  color: #00bfa5;
+  color: #ffffff;
   margin-bottom: 20px;
   font-size: 2rem;
-  border-bottom: 2px solid #00bfa5;
+  border-bottom: 2px solid #ffffff;
   padding-bottom: 8px;
   letter-spacing: 1.2px;
 }
@@ -88,7 +88,7 @@ h2 {
 ul {
   list-style-type: disc;
   margin-left: 25px;
-  color: #b2dfdb;
+  color: #ddd;
   font-size: 1.1rem;
 }
 
@@ -110,42 +110,18 @@ footer {
 }
 
 .contact-icons a {
-  color: #80cbc4;
+  color: #eee;
   font-size: 2.5rem;
   transition: color 0.3s ease;
 }
 
 .contact-icons a:hover,
 .contact-icons a:focus {
-  color: #00bfa5;
+  color: #ffffff;
   outline: none;
 }
 
-/* Imagens de fundo leves para seções */
-section:nth-of-type(odd) {
-  background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: #e0f2f1;
-  box-shadow: 0 0 15px rgba(0, 191, 165, 0.6);
-}
-
-section:nth-of-type(even) {
-  background-image: url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=800&q=80');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: #c8e6c9;
-  box-shadow: 0 0 15px rgba(0, 191, 165, 0.6);
-}
-
-/* Fundo escurecido para texto das seções */
-section > * {
-  background: rgba(18, 18, 18, 0.85);
-  padding: 15px;
-  border-radius: 8px;
-}
+/* Imagens de fundo leves para seções - removidas para clareza */
 
 /* Responsividade */
 @media(max-width: 600px) {
